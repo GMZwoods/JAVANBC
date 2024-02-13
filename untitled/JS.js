@@ -18,9 +18,9 @@ function makeTable() {
     tableContainer += tableOpen;
 
     //loops generate each row and fill with cells
-    for (i=1; i<=10; i++) {
+    for (let i=1; i<=10; i++) {
         tableContainer += rowOpen;
-        for(j=1; j<=10; j++) {
+        for(let j=1; j<=10; j++) {
             //finding the squares to boldface them
             if(i === j) {
                 tableContainer += cellOpen + " <span style='font-weight: bold; color: #00f'>" + (i * j) + "</span>\n" + cellClose;
@@ -39,21 +39,26 @@ function makeTable() {
     console.log(tableContainer);
     //return;
 }
+
+/**********************************************************************/
 const nBC= Math.floor(Math.random() * 101);
 function Verifier()
 {
-    let nombreEssais =0
-
     if (nBC !== document.getElementById("choixDuJoueur").value && nombreEssais < 10)
     {
+        $("#nombreEssais").append("<p>Un nouveau paragraphe</p>");
         nombreEssais++;
         return false;
 
     }
-    if (nBC === $("choixDuJoueur").value)
+    if (nBC === document.getElementById("choixDuJoueur").value )
     {
         return true;
     }
     if(nombreEssais >= 10) return alert("vous avez perdu!")
-
+    $("choixDuJoueur").push()
 }
+let nombreEssais =0
+let choixDuJouer=[0]
+console.log("Vos essais "+ nombreEssais)
+console.log("Vos choix "+ choixDuJouer)

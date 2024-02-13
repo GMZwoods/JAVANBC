@@ -14,7 +14,8 @@
 <p>Vous avex dix (10) essais afin de trouvez le nombre caché</p>
 <p>Le nombre se situe entre 0 et 100</p>
 <button id="startGame" onclick="makeTable()">Commencer</button>
-<br>
+<button type="reset">Recommencer</button>
+<p>Nombre d'essais :</p> <span id="nombreEssais"></span> <span id="1Essais" hidden="until-found">* Il ne vous reste qu'un essais</span>
 <br>
 <input type="text" id="choixDuJoueur" placeholder="Numéro choisi" oninput="Verifier()">
 <label for="choixDuJoueur">:</label><span id="déjaChoisi"></span>

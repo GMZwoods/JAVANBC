@@ -11,3 +11,6 @@ body{ margin: 0 auto;}
 {
     border: solid;
 }
+#startGame{
+    margin: 1rem 0;
+}
