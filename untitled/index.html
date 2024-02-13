@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>    <link rel="stylesheet" href="css.css">
+    <script src="JS.js"></script>
+</head>
+<body>
+<h1>Devine le nombre caché!</h1>
+<p>Voici les règles: </p>
+<p>Vous avex dix (10) essais afin de trouvez le nombre caché</p>
+<p>Le nombre se situe entre 0 et 100</p>
+<button id="startGame" onclick="makeTable()">Commencer</button>
+<br>
+<br>
+<input type="text" id="choixDuJoueur" placeholder="Numéro choisi" oninput="Verifier()">
+<label for="choixDuJoueur">:</label><span id="déjaChoisi"></span>
+
+<table id="tableJeu" >
+    <tr class="rowJeu">
+        <td>
+            <span style='font-weight: bold; color: #00f'>1</span>
+        </td>
+        <td>
+            2
+        </td>
+        <td>
+            3
+        </td>
+        <td>
+            4
+        </td>
+        <td>
+            5
+        </td>
+        <td>
+            6
+        </td>
+        <td>
+            7
+        </td>
+        <td>
+            8
+        </td>
+        <td>
+            9
+        </td>
+        <td>
+            10
+        </td>
+    </tr>
+    <tr class="rowJeu">
+        <td>
+            2
+        </td>
+        <td>
+            <span style='font-weight: bold; color: #00f'>4</span>
+        </td>
+        <td>
+            6
+        </td>
+        <td>
+            8
+        </td>
+        <td>
+            10
+        </td>
+        <td>
+            12
+        </td>
+        <td>
+            14
+        </td>
+        <td>
+            16
+        </td>
+        <td>
+            18
+        </td>
+        <td>
+            20
+        </td>
+    </tr>
+    <tr class="rowJeu">
+        <td>
+            3
+        </td>
+        <td>
+            6
+        </td>
+        <td>
+            <span style='font-weight: bold; color: #00f'>9</span>
+        </td>
+        <td>
+            12
+        </td>
+        <td>
+            15
+        </td>
+        <td>
+            18
+        </td>
+        <td>
+            21
+        </td>
+        <td>
+            24
+        </td>
+        <td>
+            27
+        </td>
+        <td>
+            30
+        </td>
+    </tr>
+    <tr class="rowJeu">
+        <td>
+            4
+        </td>
+        <td>
+            8
+        </td>
+        <td>
+            12
+        </td>
+        <td>
+            <span style='font-weight: bold; color: #00f'>16</span>
+        </td>
+        <td>
+            20
+        </td>
+        <td>
+            24
+        </td>
+        <td>
+            28
+        </td>
+        <td>
+            32
+        </td>
+        <td>
+            36
+        </td>
+        <td>
+            40
+        </td>
+    </tr>
+    <tr class="rowJeu">
+        <td>
+            5
+        </td>
+        <td>
+            10
+        </td>
+        <td>
+            15
+        </td>
+        <td>
+            20
+        </td>
+        <td>
+            <span style='font-weight: bold; color: #00f'>25</span>
+        </td>
+        <td>
+            30
+        </td>
+        <td>
+            35
+        </td>
+        <td>
+            40
+        </td>
+        <td>
+            45
+        </td>
+        <td>
+            50
+        </td>
+    </tr>
+    <tr class="rowJeu">
+        <td>
+            6
+        </td>
+        <td>
+            12
+        </td>
+        <td>
+            18
+        </td>
+        <td>
+            24
+        </td>
+        <td>
+            30
+        </td>
+        <td>
+            <span style='font-weight: bold; color: #00f'>36</span>
+        </td>
+        <td>
+            42
+        </td>
+        <td>
+            48
+        </td>
+        <td>
+            54
+        </td>
+        <td>
+            60
+        </td>
+    </tr>
+    <tr class="rowJeu">
+        <td>
+            7
+        </td>
+        <td>
+            14
+        </td>
+        <td>
+            21
+        </td>
+        <td>
+            28
+        </td>
+        <td>
+            35
+        </td>
+        <td>
+            42
+        </td>
+        <td>
+            <span style='font-weight: bold; color: #00f'>49</span>
+        </td>
+        <td>
+            56
+        </td>
+        <td>
+            63
+        </td>
+        <td>
+            70
+        </td>
+    </tr>
+    <tr class="rowJeu">
+        <td>
+            8
+        </td>
+        <td>
+            16
+        </td>
+        <td>
+            24
+        </td>
+        <td>
+            32
+        </td>
+        <td>
+            40
+        </td>
+        <td>
+            48
+        </td>
+        <td>
+            56
+        </td>
+        <td>
+            <span style='font-weight: bold; color: #00f'>64</span>
+        </td>
+        <td>
+            72
+        </td>
+        <td>
+            80
+        </td>
+    </tr>
+    <tr class="rowJeu">
+        <td>
+            9
+        </td>
+        <td>
+            18
+        </td>
+        <td>
+            27
+        </td>
+        <td>
+            36
+        </td>
+        <td>
+            45
+        </td>
+        <td>
+            54
+        </td>
+        <td>
+            63
+        </td>
+        <td>
+            72
+        </td>
+        <td>
+            <span style='font-weight: bold; color: #00f'>81</span>
+        </td>
+        <td>
+            90
+        </td>
+    </tr>
+    <tr class="rowJeu">
+        <td>
+            10
+        </td>
+        <td>
+            20
+        </td>
+        <td>
+            30
+        </td>
+        <td>
+            40
+        </td>
+        <td>
+            50
+        </td>
+        <td>
+            60
+        </td>
+        <td>
+            70
+        </td>
+        <td>
+            80
+        </td>
+        <td>
+            90
+        </td>
+        <td>
+            <span style='font-weight: bold; color: #00f'>100</span>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
